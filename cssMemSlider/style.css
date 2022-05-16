@@ -144,3 +144,27 @@ input {
     transform: translateX(-300%);
     opacity: 1;
 }
+
+@media screen and (max-width: 500px) and (min-width: 320px) {
+    .desc-controls-wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .mem-slider {
+        height: 40vh;
+    }
+    .description {
+        font-size: 1rem;
+        margin-top: 0;
+        width: 50%;
+    }
+    #mem1:checked ~ .desc-controls-wrapper .description1 {
+        transform: translateX(-100%);
+        margin-left: 50%;
+        opacity: 1;
+    } 
+    .controls {
+        align-self: center;
+    }
+}
