@@ -111,3 +111,36 @@ input {
     width: 0.8rem;
     height: 0.8rem;
 }
+.descriptions {
+    display: flex;
+    overflow: hidden;
+}
+
+.description {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-style:italic;
+    font-size: 1.3rem;
+    width: 100%;
+    opacity: 0;
+    flex-shrink: 0;
+    transition: transform ease-in-out 0.6s, opacity ease-in-out 0.6s;
+}
+
+#mem1:checked ~ .desc-controls-wrapper .description1 {
+    transform: translateX(-100%);
+    margin-left: 100%;
+    opacity: 1;
+} 
+#mem2:checked ~ .desc-controls-wrapper .description2 {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+#mem3:checked ~ .desc-controls-wrapper .description3 {
+    transform: translateX(-200%);
+    opacity: 1;
+} 
+#mem4:checked ~ .desc-controls-wrapper .description4 {
+    transform: translateX(-300%);
+    opacity: 1;
+}
