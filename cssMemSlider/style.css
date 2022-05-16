@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+    height: 100%;
+}
+
+.wrapper {
+    margin: 5% auto;
+    height: 70vh;
+    width: 70%;
+}
+input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.mem-slider {
+    height: 60vh;
+    width: 100%;
+	overflow: hidden;
+    border-radius: 3vw;
+    display: flex;
+}
+.mem1 {
+    background-image: url(./assets/1600155850_00032.jpg);
+}
+.mem2 {
+    background-image: url(./assets/band.jpg);
+}
+.mem3 {
+    background-image: url(./assets/billyonbike.jpg);
+}
+.mem4 {
+    background-image: url(./assets/steverambo.jpg);
+}
+
+.mem {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: transform ease-in-out 0.5s;
+}
+#mem1:checked ~ .mem-slider .mem1 {
+    transform: translateX(-100%);
+    margin-left: 100%;
+    opacity: 1;
+} #mem2:checked ~ .mem-slider .mem2 {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+#mem3:checked ~ .mem-slider .mem3 {
+    transform: translateX(-100%);
+    margin-left: -100%;
+    opacity: 1;
+} #mem4:checked ~ .mem-slider .mem4 {
+    transform: translateX(-100%);
+    margin-left: -200%;
+    opacity: 1;
+}
+
+.desc-controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 1rem;
+    height: 1rem;
+    background-color: black;
+    border-radius: 50%;
+    transition: 0.1s;
+}
+
+.controls label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+	height: 3rem;
+	margin: 1vw 0.2vw;
+	width: 3rem;
+	border-radius: 50%;
+}
+
+ label:hover .button {
+	background: green;
+ }
+
+ label:active .button {
+     background-color: yellow;
+     width: 2rem;
+     height: 2rem;
+ }
+
+#mem1:checked ~ .desc-controls-wrapper .controls label:nth-of-type(1) .button,
+#mem2:checked ~ .desc-controls-wrapper .controls label:nth-of-type(2) .button,
+#mem3:checked ~ .desc-controls-wrapper .controls label:nth-of-type(3) .button,
+#mem4:checked ~ .desc-controls-wrapper .controls label:nth-of-type(4) .button {
+	background-color: #ddd;
+    border: black solid 0.2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+.descriptions {
+    display: flex;
+    overflow: hidden;
+}
+
+.description {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-style:italic;
+    font-size: 1.3rem;
+    width: 100%;
+    opacity: 0;
+    flex-shrink: 0;
+    transition: transform ease-in-out 0.6s, opacity ease-in-out 0.6s;
+}
+
+#mem1:checked ~ .desc-controls-wrapper .description1 {
+    transform: translateX(-100%);
+    margin-left: 100%;
+    opacity: 1;
+} 
+#mem2:checked ~ .desc-controls-wrapper .description2 {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+#mem3:checked ~ .desc-controls-wrapper .description3 {
+    transform: translateX(-200%);
+    opacity: 1;
+} 
+#mem4:checked ~ .desc-controls-wrapper .description4 {
+    transform: translateX(-300%);
+    opacity: 1;
+}
+
+@media screen and (max-width: 500px) and (min-width: 320px) {
+    .desc-controls-wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .mem-slider {
+        height: 40vh;
+    }
+    .description {
+        font-size: 1rem;
+        margin-top: 0;
+        width: 50%;
+    }
+    #mem1:checked ~ .desc-controls-wrapper .description1 {
+        transform: translateX(-100%);
+        margin-left: 50%;
+        opacity: 1;
+    } 
+    .controls {
+        align-self: center;
+    }
+}
